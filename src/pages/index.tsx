@@ -1,10 +1,17 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { Banner } from "@/components/Banner/Index";
+import { Container } from "@/components/Container";
+import { List } from "@/components/List";
+import { TipOfDay } from "@/components/TipOfDay";
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <h1>Login</h1>
+    <Container>
+      <Banner />
+      <List genre="romance" title="ROMANCE ANIMES" />
+      <List genre="action" title="ACTION ANIMES" />
+      <TipOfDay />
+      <List genre="adventure" title="ADVENTURE ANIMES" />
+    </Container>
   )
 }
