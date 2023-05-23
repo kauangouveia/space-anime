@@ -1,11 +1,18 @@
 import Image from 'next/image'
 import { Button } from '../Button';
+import { CardModel } from '@/@types/cards';
+import { useListAnimeByGenre } from '@/hooks/useListAnimeByGenre';
+import { useState } from 'react';
 
 type CardProps = {
-    cardImage: string,
-    title: string
+    item: CardModel
+    setNewItem: Function
 }
-export function Card({ cardImage, title }: CardProps) {
+export function Card({ item, setNewItem }: CardProps) {
+  
+    const cardImage = item.attributes.posterImage.medium
+    const title = item.attributes.slug
+
     return (
         <>
             <div className="card bg-zinc-900 hover:scale-110 hover:mx-4 duration-300 w-[300px] h-auto m-2 rounded-lg shadow-lg">
@@ -17,9 +24,8 @@ export function Card({ cardImage, title }: CardProps) {
                         {title}
                     </div>
                     <div className="flex items-center mt-1 gap-4 justify-center">
-                        <Button text='See more'  handle={() => console.log()} />
-                        <Button text='Add to my list' handle={() => console.log()} />
-
+                        <Button text='See more' handle={() => console.log()} />
+                        <Button text='Add to my list' handle={() => setNewItem(item)} />
                     </div>
                 </div>
             </div>
