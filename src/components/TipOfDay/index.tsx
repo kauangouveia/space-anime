@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Title } from "../Title";
-import {  useListAllAnimeByPopularity } from "@/hooks/useListAllAnimeByPopularity";
+import { useListAllAnimeByPopularity } from "@/hooks/useListAllAnimeByPopularity";
 
 
 export function TipOfDay() {
@@ -11,10 +11,15 @@ export function TipOfDay() {
             <Title title="TIP OF THE DAY" />
             <div className="flex items-center justify-center w-full gap-7">
                 <div className="h-[450px] rounded-2xl w-3/6 bg-red-700">
-                    <Image className="h-full rounded-2xl w-full" src={tip.attributes.coverImage.original} alt='' width={520} height={200}/>
+                    <Image className="h-full rounded-2xl w-full" src={tip.attributes.coverImage.original} alt='' width={520} height={200} />
                 </div>
-                <div className="w-2/5 text-lg font-medium">
-                    {tip.attributes.description}
+                <div className="w-2/5 text-lg font-medium flex flex-col gap-2">
+                    <h1 className="w-2/5 text-2xl font-medium">
+                        {tip.attributes.canonicalTitle}
+                    </h1>
+                    <p className="text-lg font-medium">
+                        {tip.attributes.description}
+                    </p>
                 </div>
             </div>
         </div>
