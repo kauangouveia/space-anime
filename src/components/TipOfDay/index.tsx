@@ -1,12 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { Title } from "../Title";
-import goku from '../../../public/assets/goku.png'
-import { useANime } from "@/hooks/useAnimes";
+import {  useListAllAnimeByPopularity } from "@/hooks/useListAllAnimeByPopularity";
 
 
 export function TipOfDay() {
-    const { tip } = useANime()
+    const { tip } = useListAllAnimeByPopularity()
 
     return (
         <div className="w-[1300px] h-[580px] flex items-center justify-center flex-col">
