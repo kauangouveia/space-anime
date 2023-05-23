@@ -1,16 +1,7 @@
-import { Banner } from "@/components/Banner/Index";
-import { Container } from "@/components/Container";
-import { List } from "@/components/List";
-import { TipOfDay } from "@/components/TipOfDay";
 
-export default function Home() {
+export default function Details() {
     return (
-        <Container>
-            <Banner />
-            <List genre="romance" title="ROMANCE ANIMES" />
-            <List genre="action" title="ACTION ANIMES" />
-            <TipOfDay />
-            <List genre="adventure" title="ADVENTURE ANIMES" />
-        </Container>
+        <>
+        </>
     )
 }
