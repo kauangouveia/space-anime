@@ -22,9 +22,12 @@ export const useListAllAnimeByPopularity = () => {
                 large: '',
                 small: '',
                 original: '',
-            }
-        }
+            },
+            youtubeVideoId: ""
+        },
+    
     }
+    
 
     const [tip, setTip] = useState<CardModel>(initialValue)
 

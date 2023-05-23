@@ -18,5 +18,6 @@ export type CardModel = {
             small: string;
             original: string;
         };
+        youtubeVideoId: string
     }
 }
