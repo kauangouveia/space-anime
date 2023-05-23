@@ -3,13 +3,15 @@ import { Button } from '../Button';
 import { CardModel } from '@/@types/cards';
 import { useListAnimeByGenre } from '@/hooks/useListAnimeByGenre';
 import { useState } from 'react';
+import { useGlobalContext } from '@/context/anime-context';
+import Link from 'next/link';
 
 type CardProps = {
-    item: CardModel
-    setNewItem: Function
+    item: CardModel;
+    setNewItem: Function;
+    setChosenAnime: Function
 }
-export function Card({ item, setNewItem }: CardProps) {
-  
+export function Card({ item, setNewItem, setChosenAnime }: CardProps) {
     const cardImage = item.attributes.posterImage.medium
     const title = item.attributes.slug
 
@@ -24,7 +26,9 @@ export function Card({ item, setNewItem }: CardProps) {
                         {title}
                     </div>
                     <div className="flex items-center mt-1 gap-4 justify-center">
-                        <Button text='See more' handle={() => console.log()} />
+                        <Link href='/details'>
+                            <Button text='See more' handle={() => setChosenAnime(item)} />
+                        </Link>
                         <Button text='Add to my list' handle={() => setNewItem(item)} />
                     </div>
                 </div>
