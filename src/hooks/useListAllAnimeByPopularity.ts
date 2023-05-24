@@ -1,34 +1,9 @@
 import { CardModel } from "@/@types/cards"
 import { api } from "@/services/api"
+import { initialValue } from "@/utils"
 import { useEffect, useState } from "react"
 
 export const useListAllAnimeByPopularity = () => {
-    const initialValue = {
-        id: '',
-        type: '',
-        attributes: {
-            slug: '',
-            canonicalTitle: '',
-            description: '',
-            posterImage: {
-                tiny: '',
-                large: '',
-                small: '',
-                medium: '',
-                original: '',
-            },
-            coverImage: {
-                tiny: '',
-                large: '',
-                small: '',
-                original: '',
-            },
-            youtubeVideoId: ""
-        },
-    
-    }
-    
-
     const [tip, setTip] = useState<CardModel>(initialValue)
 
     const listAnime = async () => {

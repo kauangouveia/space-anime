@@ -1,31 +1,9 @@
 
 import { CardModel } from "@/@types/cards";
+import { initialValue } from "@/utils";
 import { createContext, useContext, Dispatch, SetStateAction, useState, ReactNode } from "react";
 
-const initialValue = {
-    id: '',
-    type: '',
-    attributes: {
-        slug: '',
-        canonicalTitle: '',
-        description: '',
-        posterImage: {
-            tiny: '',
-            large: '',
-            small: '',
-            medium: '',
-            original: '',
-        },
-        coverImage: {
-            tiny: '',
-            large: '',
-            small: '',
-            original: '',
-        },
-        youtubeVideoId: ""
-    },
 
-}
 
 interface AnimeProps {
     children: ReactNode
