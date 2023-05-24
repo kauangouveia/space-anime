@@ -13,15 +13,11 @@ export function MyList() {
         const myListJson = JSON.parse(myList || "{}")
         setMyList(myListJson)
     }, [])
-    useEffect(() => {
-      console.log(myList)
-    }, [myList])
-
     return (
         <div className=" App w-[1300px] h-[580px]">
             <Title title='MY LIST ANIMES' />
             
-            <Carousel data={myList || []} idElement='MY LIST ANIMES' />
+            <Carousel data={myList} idElement='MY LIST ANIMES' />
         </div>
 
     )

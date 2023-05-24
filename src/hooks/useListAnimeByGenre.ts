@@ -9,7 +9,7 @@ export const useListAnimeByGenre = (genre: string) => {
     const listAnimeByGenre = async () => {
         try {
             setStatus(true)
-            const { data: response } = await api.get(`/anime?filter[categories]=${genre}&sort=popularityRank&page[limit]=6`)
+            const { data: response } = await api.get(`/anime?filter[categories]=${genre}&sort=popularityRank`)
             const cards = response?.data as CardModel[]
             setListGenre(cards)
         } catch (error) {
@@ -25,8 +25,5 @@ export const useListAnimeByGenre = (genre: string) => {
         listAnimeByGenre()
     }, [])
     
-    useEffect(() => {
-        console.log(listGenre,'listGenre')
-    }, [listGenre])
     return { listGenre, status }
 }

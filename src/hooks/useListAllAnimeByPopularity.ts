@@ -8,7 +8,7 @@ export const useListAllAnimeByPopularity = () => {
 
     const listAnime = async () => {
         try {
-            const { data: response } = await api.get(`/anime?sort=popularityRank&page[limit]=6`)
+            const { data: response } = await api.get(`/anime?sort=popularityRank`)
             const cards = response?.data as CardModel[]
             const today = new Date().getDay()
 
