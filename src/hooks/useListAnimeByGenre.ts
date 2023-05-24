@@ -9,7 +9,7 @@ export const useListAnimeByGenre = (genre: string) => {
     const listAnimeByGenre = async () => {
         try {
             setStatus(true)
-            const { data: response } = await api.get(`/anime?filter[categories]=${genre}&sort=popularityRank&page[limit]=1`)
+            const { data: response } = await api.get(`/anime?filter[categories]=${genre}&sort=popularityRank&page[limit]=6`)
             const cards = response?.data as CardModel[]
             setListGenre(cards)
         } catch (error) {
