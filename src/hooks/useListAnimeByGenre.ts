@@ -4,19 +4,24 @@ import { useEffect, useState } from "react"
 
 export const useListAnimeByGenre = (genre: string) => {
     const [listGenre, setListGenre] = useState<CardModel[]>([])
-    
+    const [status, setStatus] = useState(false)
+
     const listAnimeByGenre = async () => {
         try {
+            setStatus(true)
             const { data: response } = await api.get(`/anime?filter[categories]=${genre}&sort=popularityRank`)
             const cards = response?.data as CardModel[]
             setListGenre(cards)
         } catch (error) {
             console.log(error)
+        } finally {
+
+            setStatus(false)
         }
     }
 
     useEffect(() => {
         listAnimeByGenre()
     }, [])
-    return { listGenre }
+    return { listGenre, status }
 }

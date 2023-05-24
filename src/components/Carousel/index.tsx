@@ -38,7 +38,7 @@ export function Carousel({ data, idElement }: CarouselProps) {
                 </button>
             </div>
             <div id={idElement} className="carousel p-6 flex items-center justify-start overflow-x-auto scroll-smooth scrollbar-hide">
-                {data.map((item) => (
+                {data && data.map((item) => (
                     <div key={item.id}>
                         <Card item={item} setNewItem={() => checkList(item)} setChosenAnime={() => setChosenAnime(item)} />
                     </div>
