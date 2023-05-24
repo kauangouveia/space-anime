@@ -1,9 +1,6 @@
 import Image from 'next/image'
 import { Button } from '../Button';
 import { CardModel } from '@/@types/cards';
-import { useListAnimeByGenre } from '@/hooks/useListAnimeByGenre';
-import { useState } from 'react';
-import { useGlobalContext } from '@/context/anime-context';
 import Link from 'next/link';
 
 type CardProps = {
@@ -12,8 +9,8 @@ type CardProps = {
     setChosenAnime: Function
 }
 export function Card({ item, setNewItem, setChosenAnime }: CardProps) {
-    const cardImage = item.attributes.posterImage.medium
-    const title = item.attributes.slug
+    const cardImage = item?.attributes?.posterImage?.medium
+    const title = item?.attributes?.canonicalTitle
 
     return (
         <>
