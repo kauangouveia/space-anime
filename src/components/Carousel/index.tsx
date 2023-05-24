@@ -19,7 +19,7 @@ export function Carousel({ data, idElement }: CarouselProps) {
     const [list, setList] = useState<CardModel[]>([])
 
     const checkList = (item: CardModel) => {
-        const itemExist = list.find(itemList => itemList.id === item.id)
+        const itemExist = list.find(itemList => itemList?.id === item?.id)
 
         if (itemExist) return
         const newItems = [...list, item];
@@ -38,7 +38,7 @@ export function Carousel({ data, idElement }: CarouselProps) {
                 </button>
             </div>
             <div id={idElement} className="carousel p-6 flex items-center justify-start overflow-x-auto scroll-smooth scrollbar-hide">
-                {data && data.map((item) => (
+                {Array.isArray(data) && data?.map((item) => (
                     <div key={item.id}>
                         <Card item={item} setNewItem={() => checkList(item)} setChosenAnime={() => setChosenAnime(item)} />
                     </div>

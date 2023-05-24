@@ -15,6 +15,7 @@ export const useListAllAnimeByPopularity = () => {
             setTip(cards[today])
         } catch (error) {
             console.log(error)
+            setTip(initialValue)
         }
     }
 
