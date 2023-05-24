@@ -7,3 +7,27 @@ export const scroll = (idElement: string, ordination: string) => {
         element.scrollLeft += 400;
     }
 }
+export const initialValue = {
+    id: '',
+    type: '',
+    attributes: {
+        slug: '',
+        canonicalTitle: '',
+        description: '',
+        posterImage: {
+            tiny: '',
+            large: '',
+            small: '',
+            medium: '',
+            original: '',
+        },
+        coverImage: {
+            tiny: '',
+            large: '',
+            small: '',
+            original: '',
+        },
+        youtubeVideoId: ""
+    },
+
+}
