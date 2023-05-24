@@ -17,7 +17,7 @@ export function MyList() {
     return (
         <div className=" App w-[1300px] h-[580px]">
             <Title title='MY LIST ANIMES' />
-            <Carousel data={myList} idElement='MY LIST ANIMES' />
+            <Carousel data={myList || []} idElement='MY LIST ANIMES' />
         </div>
 
     )

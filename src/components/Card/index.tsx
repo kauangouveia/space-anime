@@ -16,7 +16,7 @@ export function Card({ item, setNewItem, setChosenAnime }: CardProps) {
         <>
             <div className="card bg-zinc-900 hover:scale-110 hover:mx-4 duration-300 w-[300px] h-auto m-2 rounded-lg shadow-lg">
                 <div className="top">
-                    <Image src={cardImage} alt="image" className="w-[300px] h-[300px] object-cover rounded-xl p-2" width={420} height={200} />
+                    <Image src={cardImage || ''} alt="image" className="w-[300px] h-[300px] object-cover rounded-xl p-2" width={420} height={200} />
                 </div>
                 <div className="bottom flex flex-col justify-center items-start p-3 bg-">
                     <div className="title font-semibold text-base my-1">
