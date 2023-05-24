@@ -23,5 +23,9 @@ export const useListAnimeByGenre = (genre: string) => {
     useEffect(() => {
         listAnimeByGenre()
     }, [])
+    
+    useEffect(() => {
+        console.log(listGenre,'listGenre')
+    }, [listGenre])
     return { listGenre, status }
 }
