@@ -1,10 +1,7 @@
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { useGlobalContext } from "@/context/anime-context";
-import { useChooseAnime } from "@/hooks/useChooseAnime";
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import ReactPlayer from 'react-player/youtube'
 
 
