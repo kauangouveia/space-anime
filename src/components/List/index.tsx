@@ -18,7 +18,7 @@ export function List({ genre, title }: ListAdventureProps) {
                 &&
                 <>
                     <Title title={title} />
-                    <Carousel data={listGenre} idElement={genre} />
+                    <Carousel data={listGenre || []} idElement={genre} />
                 </>
             }
         </div>
